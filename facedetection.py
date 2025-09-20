@@ -18,7 +18,7 @@ for (x, y, w, h) in faces:
     for row in range(h):#vertical flip
         flipped_face[row, :] = face_roi[h - row - 1, :]
     image[y:y+h, x:x+w] = flipped_face
-cv2.imwrite("flipped_face_vertical.jpg", image)
+cv2.imwrite("face_flipped.jpg", image)
 cv2.imshow("Vertically Flipped Face", image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
