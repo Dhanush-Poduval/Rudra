@@ -1,0 +1,3 @@
+/home/dhanush/Desktop/cmake/build/CMakeFiles/add_executable.dir
+/home/dhanush/Desktop/cmake/build/CMakeFiles/edit_cache.dir
+/home/dhanush/Desktop/cmake/build/CMakeFiles/rebuild_cache.dir
