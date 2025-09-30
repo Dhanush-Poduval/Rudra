@@ -12,6 +12,10 @@ def receive(sock):
 def send(sock):
   while True:
     msg=input("Client : ")
+    if msg.lower()=="exit":
+      sock.close()
+      print("Connection closed")
+      break
 
     sock.sendall(msg.encode())
 host='127.0.0.1'

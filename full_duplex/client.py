@@ -12,6 +12,10 @@ def handle_client(conn):
   def send():
     while True:
       msg=input("Server :")
+      if msg.lower()=='exit':
+        conn.close()
+        print("Connection Closed")
+        break
       conn.sendall(msg.encode())
   threading.Thread(target=receive,daemon=True).start()
   threading.Thread(target=send,daemon=True).start()
