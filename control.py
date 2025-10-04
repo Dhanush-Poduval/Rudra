@@ -7,9 +7,13 @@ motor1=0
 motor2=1
 
 def speed(motor,speed):
-    if speed<0:
-        speed=256+speed;
-    ser.write(bytes([speed]))
+    if motor ==0:
+        command=64+speed
+        command=max(0,min(127,command))
+    else:
+        command=192+speed
+        command=max(128,min(255,command))
+    ser.write(bytes([command]))
 
 try:
     print("Enter w a s d")
@@ -29,8 +33,8 @@ try:
             l_speed+=10
             r_speed-=20
 
-        l_speed=max(min(l_speed,60),-127)
-        r_speed=max(min(r_speed,60),-127)
+        l_speed=max(min(l_speed,63),-63)
+        r_speed=max(min(r_speed,63),-63)
         speed(motor1,l_speed)
         speed(motor2 , r_speed)
 
