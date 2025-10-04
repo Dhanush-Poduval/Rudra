@@ -4,7 +4,7 @@ import keyboard
 
 ser=serial.Serial
 motor1=0
-motor2=0
+motor2=1
 
 def speed(motor,speed):
     if speed<0:
@@ -17,20 +17,20 @@ try:
         l_speed=0
         r_speed=0
         if keyboard.is_pressed('w'):
-            l_speed+=50
-            r_speed+=50
+            l_speed+=10
+            r_speed+=10
         if keyboard.is_pressed('a'):
-            l_speed-=50
-            r_speed-=50
+            l_speed-=10
+            r_speed-=10
         if keyboard.is_pressed('s'):
-            l_speed-=30
-            r_speed+=30
+            l_speed-=10
+            r_speed+=20
         if keyboard.is_pressed('d'):
-            l_speed+=30
-            r_speed-=30
+            l_speed+=10
+            r_speed-=20
 
-        l_speed=max(min(l_speed,100),-127)
-        r_speed=max(min(r_speed,100,-127)
+        l_speed=max(min(l_speed,60),-127)
+        r_speed=max(min(r_speed,60),-127)
         speed(motor1,l_speed)
         speed(motor2 , r_speed)
 
