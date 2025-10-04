@@ -29,8 +29,8 @@ try:
             l_speed+=30
             r_speed-=30
 
-        l_speed=max(min(l_speed,127),-127)
-        r_speed=max(min(r_speed,127),-127)
+        l_speed=max(min(l_speed,100),-127)
+        r_speed=max(min(r_speed,100,-127)
         speed(motor1,l_speed)
         speed(motor2 , r_speed)
 
